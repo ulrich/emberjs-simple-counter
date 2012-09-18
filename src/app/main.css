@@ -1,0 +1,19 @@
+[role=main], header {
+   width: 800px;
+   margin: auto;
+   margin-top: 30px;
+}
+
+#projects {
+   float: left;
+   margin-right: 10px;
+}
+
+input {
+   height: 100%;
+}
+
+button {
+   height: 25px;
+   width: 25px;
+}
