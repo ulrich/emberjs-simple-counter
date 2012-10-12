@@ -10,7 +10,7 @@ var casper = require('casper').create({
 });
 
 // URL de l'application de test
-var URL = "file:///media/data/Dropbox/programming/projects/js/ember.js/emberjs-simple-counter/src/index.html";
+var URL = "file:///home/ulrich/projects/emberjs-simple-counter/src/index.html";
 
 casper.start(URL, function() {
    // test the page title
@@ -24,13 +24,17 @@ casper.start(URL, function() {
 });
 
 // first method
-casper.then(function() {
-   this.click('button#plus_button');
-   
-   var result = this.evaluate(function() {
+result = casper.waitFor(function check() {
+
+     return this.evaluate(function() {
+      //this.click('button#plus_button');
+
+      $('#plus_button').click();
+
       return document.querySelector('input#compteur_field').value;
-   });
-   this.test.assertEquals(result, 2, 'The value must be incremented by 2');
+     });
+  }, function then() {
+     this.test.assertEquals(result, 2, 'The value must be incremented by 2');
 });
 
 // second method

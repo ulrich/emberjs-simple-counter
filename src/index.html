@@ -16,9 +16,13 @@
      <link rel="stylesheet" href="vendor/css/bootstrap.css">
      <link rel="stylesheet" href="app/main.css">
    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+      <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0.beta6/handlebars.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.pre/ember-1.0.pre.min.js"></script>      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ember.js/1.0.pre/ember-1.0.pre.min.js"></script-->
+
+      <script src="vendor/js/jquery-1.7.2.min.js"></script>
+      <script src="vendor/js/handlebars-1.0.0.beta.6.js"></script>
+      <script src="vendor/js/ember-1.0.pre.js"></script>
 
       <script src="app/main.js"></script>
    </head>
@@ -32,12 +36,12 @@
          <script type="text/x-handlebars">      
             <div id="projects">
                <label for="compteur">Compteur : </label>
-               {{#with App.CompteurController}}
+               {{#with App.compteurController}}
                   {{view Ember.TextField elementId="compteur_field" valueBinding="compteur.valeur" }}
                {{/with}}
                <div id="actions">         
-                  {{#view Ember.Button elementId="minus_button" target="App.CompteurController" action="decremente"}}-{{/view}}
-                  {{#view Ember.Button elementId="plus_button" target="App.CompteurController" action="incremente"}}+{{/view}}
+                  {{#view Ember.Button elementId="minus_button" target="App.compteurController" action="decremente"}}-{{/view}}
+                  {{#view Ember.Button elementId="plus_button" target="App.compteurController" action="incremente"}}+{{/view}}
                </div>
             </div>
          </script>

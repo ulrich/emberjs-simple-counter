@@ -8,10 +8,10 @@ App = Ember.Application.create({
 
    // Initialisation de la valeur par défaut du compteur
    ready: function() {
-      App.CompteurController.compteur = App.Compteur.create({
+      App.compteurController.compteur = App.Compteur.create({
          valeur: 1
       });
-      console.log("Compteur initialisé avec la valeur: "  + App.CompteurController.compteur.valeur);
+      console.log("Compteur initialisé avec la valeur: "  + App.compteurController.compteur.valeur);
    }
 }) ;
 
@@ -23,7 +23,7 @@ App.Compteur = Ember.Object.extend({
 
 // CONTROLEUR
 // Compteur
-App.CompteurController = Ember.ArrayController.create({
+App.compteurController = Ember.ArrayController.create({
    compteur: null,
 
    // Décrémente le compteur
